@@ -1,10 +1,12 @@
 package software.sigma.tutorial.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Version;
 import java.io.Serializable;
 
 /**
@@ -21,6 +23,10 @@ public class Employee implements Serializable {
     private String firstName;
     private String lastName;
     private String description;
+
+    @Version
+    @JsonIgnore
+    private Long version;
 
     public Employee(String firstName, String lastName, String description) {
         this.firstName = firstName;
