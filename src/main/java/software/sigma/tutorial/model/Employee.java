@@ -2,6 +2,7 @@ package software.sigma.tutorial.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,6 +15,7 @@ import java.io.Serializable;
  */
 @Data
 @Entity
+@NoArgsConstructor
 public class Employee implements Serializable {
 
     @Id
@@ -34,6 +36,4 @@ public class Employee implements Serializable {
         this.description = description;
     }
 
-    private Employee() {
-    }
 }

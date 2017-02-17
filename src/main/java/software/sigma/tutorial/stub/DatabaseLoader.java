@@ -14,19 +14,20 @@ import java.util.Arrays;
 @Component
 public class DatabaseLoader implements CommandLineRunner {
 
-    private final EmployeeRepository employeeRepository;
+    private final EmployeeRepository repository;
 
     @Autowired
     public DatabaseLoader(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
+        this.repository = employeeRepository;
     }
 
     @Override
     public void run(String... strings) throws Exception {
-        System.out.println("ARGUMENTS: " + Arrays.toString(strings));
-        Employee employee = new Employee("Kvothe", "Arliden", "Main character in the Kingkiller Chronicle");
-        System.out.println("Add: " + employee);
-        //TODO here add employee on start of app, remove it after tests
-//        employeeRepository.save(employee);
+       /* this.repository.save(new Employee("Frodo", "Baggins", "ring bearer"));
+        this.repository.save(new Employee("Bilbo", "Baggins", "burglar"));
+        this.repository.save(new Employee("Gandalf", "the Grey", "wizard"));
+        this.repository.save(new Employee("Samwise", "Gamgee", "gardener"));
+        this.repository.save(new Employee("Meriadoc", "Brandybuck", "pony rider"));
+        this.repository.save(new Employee("Peregrin", "Took", "pipe smoker"));*/
     }
 }
