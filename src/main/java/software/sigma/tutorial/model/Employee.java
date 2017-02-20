@@ -4,10 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Version;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -30,10 +27,14 @@ public class Employee implements Serializable {
     @JsonIgnore
     private Long version;
 
-    public Employee(String firstName, String lastName, String description) {
+    @ManyToOne
+    private Manager manager;
+
+    public Employee(String firstName, String lastName, String description, Manager manager) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
+        this.manager = manager;
     }
 
 }
